@@ -58,18 +58,42 @@ class HomePage extends StatelessWidget {
                 ),
                 BottomNavigationBarItem(
                     icon: Padding(
-                      padding: 1.topPadding,
-                      child: SvgPicture.asset(
-                        'assets/images/bonfire.svg',
+                      padding: 3.topPadding,
+                      child: Badge(
+                        backgroundColor: context.colorScheme.surfaceTint,
+                        label: SizedBox(
+                          width: 16,
+                          height: 13,
+                        ),
+                        child: SvgPicture.asset(
+                          'assets/images/bonfire.svg',
+                        ),
                       ),
                     ),
                     label: ""
                 ),
                 BottomNavigationBarItem(
                     icon: Padding(
-                      padding: 1.topPadding,
-                      child: SvgPicture.asset(
-                        'assets/images/chat.svg',
+                      padding: 5.topPadding,
+                      child: Badge(
+                        backgroundColor: context.colorScheme.surfaceTint,
+                        label: SizedBox(
+                          width: 16,
+                          height: 13,
+                          child: Center(
+                            child: Text(
+                              '10',
+                              style: TextStyle(
+                                color: context.colorScheme.surface,
+                                fontSize: 10,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                          )
+                        ),
+                        child: SvgPicture.asset(
+                          'assets/images/chat.svg',
+                        ),
                       ),
                     ),
                     label: ""

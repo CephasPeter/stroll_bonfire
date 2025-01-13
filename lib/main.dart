@@ -33,12 +33,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: MaterialTheme.lightScheme(),
-        fontFamily: 'Gilroy',
+        fontFamily: 'Proxima Nova',
       ),
       darkTheme: ThemeData(
         useMaterial3: true,
         colorScheme: MaterialTheme.darkScheme(),
-        fontFamily: 'Gilroy',
+        fontFamily: 'Proxima Nova',
       ),
       themeMode: ThemeMode.dark,
       localizationsDelegates: context.localizationDelegates,
