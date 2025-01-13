@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:stroll_bonfire/helpers/extensions.dart';
 
 class HomePage extends StatelessWidget {
@@ -42,6 +43,48 @@ class HomePage extends StatelessWidget {
           //Page Content
           Scaffold(
             backgroundColor: Colors.transparent,
+            bottomNavigationBar: BottomNavigationBar(
+              backgroundColor: context.colorScheme.surface,
+              type: BottomNavigationBarType.fixed,
+              items: [
+                BottomNavigationBarItem(
+                  icon: Padding(
+                    padding: 1.topPadding,
+                    child: SvgPicture.asset(
+                      'assets/images/poker_cards.svg',
+                    ),
+                  ),
+                  label: ""
+                ),
+                BottomNavigationBarItem(
+                    icon: Padding(
+                      padding: 1.topPadding,
+                      child: SvgPicture.asset(
+                        'assets/images/bonfire.svg',
+                      ),
+                    ),
+                    label: ""
+                ),
+                BottomNavigationBarItem(
+                    icon: Padding(
+                      padding: 1.topPadding,
+                      child: SvgPicture.asset(
+                        'assets/images/chat.svg',
+                      ),
+                    ),
+                    label: ""
+                ),
+                BottomNavigationBarItem(
+                    icon: Padding(
+                      padding: 1.topPadding,
+                      child: SvgPicture.asset(
+                        'assets/images/user.svg',
+                      ),
+                    ),
+                    label: ""
+                ),
+              ],
+            ),
           ),
         ],
       ),
