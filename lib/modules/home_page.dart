@@ -1,18 +1,50 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:stroll_bonfire/helpers/extensions.dart';
 
-class HomePage extends StatefulWidget {
+class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-
-  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        systemNavigationBarColor: Colors.transparent,
+      ),
+      child: Stack(
+        children: [
+          //Background Image
+          Image.asset(
+            'assets/images/background_image.png',
+            fit: BoxFit.cover,
+            height: context.height * 0.7,
+            width: double.infinity,
+          ),
+          //Bottom Gradient
+          Container(
+            height: context.height * 0.7,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Colors.transparent,
+                  Color(0xFF000000).withValues(alpha: 0.28),
+                  Color(0xFF000000).withValues(alpha: 0.64),
+                  Color(0xFF000000).withValues(alpha: 0.8),
+                  Colors.black,
+                ],
+              ),
+            ),
+          ),
+          //Page Content
+          Scaffold(
+            backgroundColor: Colors.transparent,
+          ),
+        ],
+      ),
     );
   }
 }

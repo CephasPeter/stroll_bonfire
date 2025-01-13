@@ -152,3 +152,17 @@ extension StringExtension on String{
     );
   }
 }
+
+extension BuildContextExtension on BuildContext{
+  ColorScheme get colorScheme {
+    return Theme.of(this).colorScheme;
+  }
+
+  double get width {
+    return MediaQuery.of(this).size.width;
+  }
+
+  double get height {
+    return MediaQuery.of(this).size.height;
+  }
+}
