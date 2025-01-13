@@ -142,3 +142,86 @@ class GridContent extends StatelessWidget {
     );
   }
 }
+
+class AppAvatar extends StatelessWidget {
+  const AppAvatar({
+    super.key, this.asset, this.width, this.height, this.radius, this.borderColor, this.backgroundColor, this.assetWidth, this.assetHeight,
+  });
+  final String? asset;
+  final double? width;
+  final double? height;
+  final double? assetWidth;
+  final double? assetHeight;
+  final double? radius;
+  final Color? borderColor;
+  final Color? backgroundColor;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: width,
+      height: height,
+      decoration: BoxDecoration(
+        color: backgroundColor ?? context.colorScheme.scrim,
+        borderRadius: BorderRadius.circular(radius ?? 360),
+        boxShadow: [
+          BoxShadow(
+            color: context.colorScheme.scrim.withValues(alpha: 0.5),
+            blurRadius: 10,
+            offset: Offset(0, 5),
+          ),
+        ],
+        border: Border.all(
+          color: borderColor ?? context.colorScheme.scrim,
+          width: 2
+        ),
+      ),
+      child: Padding(
+        padding: 5.allPadding,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(radius ?? 360),
+          child: Image.asset(
+            asset!,
+            width: assetWidth,
+            height: assetHeight,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class TextWidgetWithIcon extends StatelessWidget {
+  const TextWidgetWithIcon({
+    super.key, required this.asset, required this.content,
+  });
+  final String asset;
+  final String content;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Padding(
+          padding: 2.bottomPadding,
+          child: SvgPicture.asset(
+            asset,
+            width: 12,
+            height: 12,
+          ),
+        ),
+        2.widthBox,
+        Text(
+          content,
+          style: TextStyle(
+            color: context.colorScheme.primaryContainer,
+            fontSize: 14,
+            fontWeight: FontWeight.w700,
+          ),
+        ),
+      ],
+    );
+  }
+}
