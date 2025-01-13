@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:stroll_bonfire/helpers/app_dimensions.dart';
 import 'package:stroll_bonfire/helpers/extensions.dart';
+
+import '../helpers/app_widgets.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -43,6 +46,50 @@ class HomePage extends StatelessWidget {
           //Page Content
           Scaffold(
             backgroundColor: Colors.transparent,
+            body: SizedBox(
+              height: double.infinity,
+              width: double.infinity,
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  //Footer
+                  Padding(
+                    padding: AppDimensions.margin.allPadding,
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          'pick_option_text'.translate,
+                          style: TextStyle(
+                            color: context.colorScheme.onSurface,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                        Spacer(),
+                        AppIconButton(
+                          asset: 'assets/images/mic.svg',
+                          width: 55,
+                          height: 55,
+                          iconColor: context.colorScheme.primary,
+                          backgroundColor: context.colorScheme.surface,
+                          borderColor: context.colorScheme.primary,
+                        ),
+                        10.widthBox,
+                        AppIconButton(
+                          icon: Icons.arrow_forward,
+                          width: 55,
+                          height: 55,
+                          iconColor: context.colorScheme.onPrimary,
+                          iconSize: 30,
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
             bottomNavigationBar: BottomNavigationBar(
               backgroundColor: context.colorScheme.surface,
               type: BottomNavigationBarType.fixed,
