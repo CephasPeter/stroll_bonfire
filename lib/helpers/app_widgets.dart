@@ -216,7 +216,7 @@ class TextWidgetWithIcon extends StatelessWidget {
         Text(
           content,
           style: TextStyle(
-            color: context.colorScheme.primaryContainer,
+            color: context.colorScheme.onSurface,
             fontSize: 14,
             fontWeight: FontWeight.w700,
           ),

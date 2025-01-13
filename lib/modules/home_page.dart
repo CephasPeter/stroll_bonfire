@@ -141,7 +141,7 @@ class _HomePageState extends State<HomePage> {
                                         ),
                                       ),
                                       child: Padding(
-                                        padding: 25.startPadding.copyWith(
+                                        padding: 30.startPadding.copyWith(
                                           end: 10
                                         ),
                                         child: Text(
