@@ -60,3 +60,85 @@ class AppIconButton extends StatelessWidget {
     );
   }
 }
+
+class GridContent extends StatelessWidget {
+  const GridContent({
+    super.key, this.height, this.width, this.identifier, this.content, this.isSelected, this.onTap,
+  });
+  final double? height;
+  final double? width;
+  final String? identifier;
+  final String? content;
+  final bool? isSelected;
+  final Function? onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: context.colorScheme.surfaceBright,
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(
+          color: isSelected! ? context.colorScheme.primary : Colors.transparent,
+          width: 2,
+        ),
+      ),
+      margin: 10.topPadding,
+      width: width,
+      height: height,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(12),
+        child: InkWell(
+          borderRadius: BorderRadius.circular(12),
+          onTap: (){
+            onTap?.call();
+          },
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              children: [
+                5.widthBox,
+                Container(
+                  decoration: BoxDecoration(
+                    color: isSelected ?? false ? context.colorScheme.primary : Colors.transparent,
+                    borderRadius: BorderRadius.circular(360),
+                    border: Border.all(
+                      color: isSelected ?? false ? context.colorScheme.primary : context.colorScheme.onSurfaceVariant,
+                      width: 1.5,
+                    ),
+                  ),
+                  width: 25,
+                  height: 25,
+                  child: Center(
+                    child: Padding(
+                      padding: 1.topPadding,
+                      child: Text(
+                        identifier ?? "",
+                        style: TextStyle(
+                          color: context.colorScheme.onSurfaceVariant,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                10.widthBox,
+                Expanded(
+                  child: Text(
+                    content!,
+                    style: TextStyle(
+                      color: context.colorScheme.onSurfaceVariant,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

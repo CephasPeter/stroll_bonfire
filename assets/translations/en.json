@@ -1,4 +1,8 @@
 {
   "app_name": "Stroll",
-  "pick_option_text": "Pick your option.\nSee who has a similar mind."
+  "pick_option_text": "Pick your option.\nSee who has a similar mind.",
+  "grid_option_1": "The peace in the \nearly mornings",
+  "grid_option_2": "The magical \ngolden hours",
+  "grid_option_3": "Wind-down time \nafter dinners",
+  "grid_option_4": "The serenity past \nmidnight"
 }

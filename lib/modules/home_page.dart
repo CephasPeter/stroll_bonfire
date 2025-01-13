@@ -6,8 +6,15 @@ import 'package:stroll_bonfire/helpers/extensions.dart';
 
 import '../helpers/app_widgets.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  ValueNotifier selectedGridPosition = ValueNotifier<int>(0);
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +59,67 @@ class HomePage extends StatelessWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  Padding(
+                    padding: AppDimensions.margin.startAndEndPadding,
+                    child: ValueListenableBuilder(
+                      valueListenable: selectedGridPosition,
+                      builder: (_,value,___) {
+                        return Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                GridContent(
+                                  identifier: "A",
+                                  content: "grid_option_1".translate,
+                                  width: context.width * 0.45,
+                                  isSelected: value == 0,
+                                  onTap: () {
+                                    selectedGridPosition.value = 0;
+                                  },
+                                ),
+                                GridContent(
+                                  identifier: "B",
+                                  content: "grid_option_2".translate,
+                                  width: context.width * 0.45,
+                                  isSelected: value == 1,
+                                  onTap: () {
+                                    selectedGridPosition.value = 1;
+                                  },
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                GridContent(
+                                  identifier: "C",
+                                  content: "grid_option_3".translate,
+                                  width: context.width * 0.45,
+                                  isSelected: value == 2,
+                                  onTap: () {
+                                    selectedGridPosition.value = 2;
+                                  },
+                                ),
+                                GridContent(
+                                  identifier: "D",
+                                  content: "grid_option_4".translate,
+                                  width: context.width * 0.45,
+                                  isSelected: value == 3,
+                                  onTap: () {
+                                    selectedGridPosition.value = 3;
+                                  },
+                                ),
+                              ],
+                            ),
+                          ],
+                        );
+                      }
+                    ),
+                  ),
                   //Footer
                   Padding(
                     padding: AppDimensions.margin.allPadding,
@@ -86,7 +153,7 @@ class HomePage extends StatelessWidget {
                         ),
                       ],
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
@@ -162,3 +229,4 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+
