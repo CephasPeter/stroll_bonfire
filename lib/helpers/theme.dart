@@ -173,7 +173,7 @@ class MaterialTheme {
   static ColorScheme darkScheme() {
     return const ColorScheme(
       brightness: Brightness.dark,
-      primary: Color(0xffaac7ff),
+      primary: Color(0xff8B88EF),
       surfaceTint: Color(0xffaac7ff),
       onPrimary: Color(0xff0a305f),
       primaryContainer: Color(0xff284777),
@@ -190,7 +190,7 @@ class MaterialTheme {
       onError: Color(0xff690005),
       errorContainer: Color(0xff93000a),
       onErrorContainer: Color(0xffffdad6),
-      surface: Color(0xff000000),
+      surface: Color(0xff0F1115),
       onSurface: Color(0xffe2e2e9),
       onSurfaceVariant: Color(0xffc4c6d0),
       outline: Color(0xff8e9099),
@@ -211,8 +211,8 @@ class MaterialTheme {
       onTertiaryFixed: Color(0xff28132e),
       tertiaryFixedDim: Color(0xffddbce0),
       onTertiaryFixedVariant: Color(0xff573e5c),
-      surfaceDim: Color(0xff000000),
-      surfaceBright: Color(0xff37393e),
+      surfaceDim: Color(0xff020202),
+      surfaceBright: Color(0xff232A2E),
       surfaceContainerLowest: Color(0xff0c0e13),
       surfaceContainerLow: Color(0xff191c20),
       surfaceContainer: Color(0xff1d2024),
